@@ -62,7 +62,7 @@ public class StringUtilities {
     public static Boolean compareTwoStrings(String inputValue, String comparableValue){
         return null;
     }
-
+    //making sure my git is sorted out. what a nightmare.
     /**
      * @param inputValue the value input from user
      * @return the middle character of `inputValue`
