@@ -34,11 +34,7 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            result.append(input.charAt(i));
-        }
-        return result.toString();
+        return input.substring(0,3);
     }
 
     /**
@@ -46,12 +42,7 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
-        StringBuilder result = new StringBuilder();
-        int counter = input.length()-3;
-        for (int i = counter; i < input.length(); i++) {
-            result.append(input.charAt(i));
-        }
-        return result.toString();
+        return input.substring(input.length()-3);
     }
 
     /**
@@ -60,7 +51,7 @@ public class StringUtilities {
      * @return the equivalence of two strings, `inputValue` and `comparableValue`
      */
     public static Boolean compareTwoStrings(String inputValue, String comparableValue){
-        return inputValue == comparableValue;
+        return inputValue.equals(comparableValue);
     }
 
     /**
@@ -77,10 +68,8 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        String firstWord = "";
         String[] parts = spaceDelimitedString.split(" ");
-        firstWord += parts[0];
-        return firstWord;
+        return parts[0];
     }
 
     /**
@@ -88,10 +77,8 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        String secondWord = "";
         String [] parts = spaceDelimitedString.split(" ");
-        secondWord += parts[1];
-        return secondWord;
+        return parts[1];
     }
 
     /**
@@ -99,11 +86,8 @@ public class StringUtilities {
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        String reversedString = "";
-        for (int i = stringToReverse.length()-1; i >= 0 ; i--) {
-            reversedString += stringToReverse.charAt(i);
-        }
-
-        return reversedString;
+        StringBuilder builder = new StringBuilder();
+        builder.append(stringToReverse).reverse();
+        return builder.toString();
     }
 }
